@@ -1,0 +1,491 @@
+# UPGRADE THE EXISTING NEXORA TECHNOLOGIES WEBSITE
+
+You are modifying an EXISTING Nexora Technologies website.
+
+IMPORTANT:
+
+Do NOT rebuild the website from scratch.
+
+Do NOT replace the existing design unnecessarily.
+
+Do NOT change the established Nexora branding.
+
+First inspect the existing codebase and understand the current structure, components, pages, styling, assets, and routing.
+
+Then make the following improvements while preserving the existing design language.
+
+---
+
+# EXISTING BRAND — KEEP THIS
+
+Company:
+
+NEXORA TECHNOLOGIES
+
+Tagline:
+
+Digital Solutions. Built for Growth.
+
+Existing brand direction:
+
+* Premium technology consultancy
+* Dark navy foundation
+* Electric blue
+* Cyan
+* White
+* Modern typography
+* Nexora N monogram
+* Clean futuristic aesthetic
+
+Do not replace the existing logo with a different logo.
+
+Do not redesign the entire homepage.
+
+The goal is to ENHANCE the current website.
+
+---
+
+# PRIMARY UPGRADE
+
+The current website needs to feel more human and more premium.
+
+Introduce carefully selected, professional REAL-HUMAN BUSINESS PHOTOGRAPHY throughout the website.
+
+The site should communicate:
+
+PEOPLE + BUSINESS + TECHNOLOGY + STRATEGY
+
+rather than relying heavily on abstract technology graphics.
+
+---
+
+# 1. HOMEPAGE HERO
+
+Keep the existing hero structure and messaging.
+
+Enhance the hero with a premium human-centered image.
+
+Preferred imagery:
+
+A professional African/Nigerian entrepreneur, executive, consultant, or business team working in a sophisticated modern environment.
+
+The photograph should communicate:
+
+* confidence
+* innovation
+* business
+* technology
+* professionalism
+* growth
+
+Use the image as part of the hero composition rather than simply placing a rectangular stock photo underneath the text.
+
+Possible treatments:
+
+* large right-side image
+* background image with dark overlay
+* layered image/card composition
+* rounded image container integrated into the design
+
+Do not make the image overpower the headline.
+
+The existing Nexora CTA buttons must remain prominent.
+
+---
+
+# 2. SERVICE SECTIONS
+
+Add professional human photography to appropriate service sections.
+
+Use different imagery for:
+
+### Web Solutions
+
+Business professional interacting with a modern website or digital platform.
+
+### Mobile Applications
+
+Professional using a smartphone application.
+
+### E-commerce
+
+Entrepreneur managing an online business.
+
+### AI & Automation
+
+Professional interacting with modern AI/software technology.
+
+### Business Systems
+
+Business team reviewing dashboards or digital analytics.
+
+Do not use the same photograph repeatedly.
+
+---
+
+# 3. ABOUT SECTION
+
+Add one strong professional human/team image.
+
+The image should communicate:
+
+People + strategy + technology.
+
+Do NOT create fake employees.
+
+Do NOT imply Nexora has a large team if the website does not currently establish that.
+
+The image is purely visual branding unless actual team information is provided.
+
+---
+
+# 4. SOLUTIONS SECTION
+
+Use human-centered imagery where it improves the visual storytelling.
+
+For example:
+
+Business owner → digital transformation
+
+Team → automation
+
+Entrepreneur → e-commerce
+
+Professional → AI solution
+
+Keep the design clean.
+
+Do not turn every section into an image gallery.
+
+---
+
+# 5. PORTFOLIO
+
+Make portfolio cards image-ready.
+
+Every portfolio project should support:
+
+* project title
+* category
+* description
+* image
+* technologies
+* project type
+
+For example:
+
+type: "Concept Project"
+
+Do NOT invent clients.
+
+Do NOT invent testimonials.
+
+Do NOT present fictional concept projects as completed client work.
+
+---
+
+# 6. CREATE A CENTRAL IMAGE SYSTEM
+
+Create:
+
+src/config/images.ts
+
+All major website images should be referenced from this configuration rather than being scattered throughout components.
+
+Example structure:
+
+export const images = {
+hero: "/images/hero/hero-business.webp",
+
+about: "/images/about/about-team.webp",
+
+services: {
+web: "/images/services/web-development.webp",
+mobile: "/images/services/mobile-app.webp",
+ecommerce: "/images/services/ecommerce.webp",
+ai: "/images/services/ai-automation.webp",
+business: "/images/services/business-systems.webp"
+},
+
+solutions: {
+growth: "/images/solutions/business-growth.webp",
+automation: "/images/solutions/automation.webp"
+}
+};
+
+Adapt this to the existing code architecture rather than blindly copying the example.
+
+---
+
+# 7. CREATE THIS IMAGE DIRECTORY
+
+Use the existing project's public/static asset structure.
+
+Prefer:
+
+public/images/
+
+Inside:
+
+public/images/
+hero/
+services/
+about/
+solutions/
+portfolio/
+team/
+blog/
+
+Do not duplicate existing image directories unnecessarily.
+
+If the project already has an appropriate asset directory, use that structure instead.
+
+---
+
+# 8. GITHUB IMAGE MANAGEMENT
+
+The website must be designed so that images can easily be changed directly from GitHub.
+
+The workflow should be:
+
+GitHub repository
+↓
+public/images/
+↓
+Upload/replace image
+↓
+Commit change
+↓
+Replit deployment updates
+↓
+Website displays new image
+
+The website owner should NOT have to modify React components simply to replace an existing photograph.
+
+---
+
+# 9. SAME-FILENAME REPLACEMENT
+
+Make image replacement particularly simple.
+
+Example:
+
+Current:
+
+/images/hero/hero-business.webp
+
+If the owner uploads a new photograph using the same filename:
+
+hero-business.webp
+
+the website should automatically use the new photograph.
+
+No component changes should be necessary.
+
+---
+
+# 10. IMAGE FALLBACK
+
+Create a reusable image component or equivalent system.
+
+If an image cannot load:
+
+* do not display a broken image
+* display a tasteful Nexora branded fallback
+* use the Nexora navy background
+* optionally display the Nexora N symbol
+
+The page must remain professional.
+
+---
+
+# 11. IMAGE OPTIMIZATION
+
+Use:
+
+* WebP where appropriate
+* responsive image sizing
+* lazy loading below the fold
+* optimized dimensions
+* descriptive alt text
+
+Do not load unnecessarily huge photographs.
+
+Hero images should be optimized for performance.
+
+---
+
+# 12. GITHUB IMAGE GUIDE
+
+Create a file in the repository:
+
+IMAGE_GUIDE.md
+
+Explain in simple terms how to:
+
+1. Open the GitHub repository
+2. Open the image folder
+3. Upload a new image
+4. Replace an existing image
+5. Use the correct filename
+6. Commit the change
+7. Wait for deployment
+8. Confirm the website has updated
+
+Include examples.
+
+Explain:
+
+Good:
+
+hero-business.webp
+
+ai-automation.webp
+
+about-team.webp
+
+Bad:
+
+IMG_82737.jpg
+
+New Image FINAL 2.jpg
+
+photo123.png
+
+---
+
+# 13. IMAGE INVENTORY
+
+Create:
+
+src/config/imageInventory.ts
+
+or an equivalent location appropriate to the existing project.
+
+Document:
+
+* image filename
+* page/section
+* purpose
+* recommended dimensions
+* file format
+
+This is for future maintenance.
+
+---
+
+# 14. DO NOT USE RANDOM EXTERNAL IMAGE URLS
+
+Production images should preferably live inside the Nexora repository.
+
+Do not make the website dependent on random external image URLs.
+
+If temporary images are required during development, structure the code so they can easily be replaced with local repository assets.
+
+---
+
+# 15. IMAGE STYLE
+
+The photography should be:
+
+* realistic
+* premium
+* modern
+* editorial
+* professional
+* diverse
+* business-oriented
+
+Prioritize African/Nigerian business professionals where appropriate.
+
+Avoid:
+
+* obviously AI-generated faces
+* cheesy stock photography
+* exaggerated corporate handshakes
+* fake-looking office scenes
+* watermarked images
+* low-quality photographs
+* overly staged smiling portraits
+
+---
+
+# 16. IMPORTANT — PRESERVE THE CURRENT WEBSITE
+
+Before changing anything:
+
+Inspect the existing site.
+
+Identify:
+
+* current pages
+* current components
+* current routes
+* current styling system
+* current logo implementation
+* current responsive behavior
+* existing image assets
+
+Then modify only what is necessary.
+
+Do not remove working functionality.
+
+Do not change working navigation unnecessarily.
+
+Do not replace the current color palette.
+
+Do not replace the current Nexora logo.
+
+Do not rewrite the entire project.
+
+---
+
+# 17. TEST EVERYTHING
+
+After implementing the upgrade, test:
+
+Desktop
+Tablet
+Mobile
+
+Test:
+
+* navigation
+* images
+* image loading
+* responsive image behavior
+* buttons
+* forms
+* page transitions
+* portfolio
+* fallbacks
+* accessibility
+* performance
+
+Make sure there are no broken images or broken links.
+
+---
+
+# 18. FINAL OBJECTIVE
+
+The existing Nexora Technologies website should now feel like a:
+
+PREMIUM DIGITAL TECHNOLOGY CONSULTANCY
+
+rather than a generic technology website.
+
+The visual story should communicate:
+
+REAL PEOPLE
++
+REAL BUSINESSES
++
+REAL TECHNOLOGY
++
+REAL SOLUTIONS
+
+while preserving the existing Nexora identity.
+
+Do not rebuild from scratch.
+
+Upgrade the existing website intelligently.
