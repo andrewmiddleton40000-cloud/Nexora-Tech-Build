@@ -3,6 +3,7 @@ import { useState, type ImgHTMLAttributes } from 'react';
 type LocalImageProps = ImgHTMLAttributes<HTMLImageElement> & {
   fallbackLabel?: string;
   containerClassName?: string;
+  'data-testid'?: string;
 };
 
 function FallbackMark() {

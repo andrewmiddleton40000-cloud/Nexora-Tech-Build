@@ -2,7 +2,7 @@ import { type FormEvent, type ReactNode, useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { LocalImage } from '@/components/local-image';
-import { images } from '@/config/images';
+import { images, type NexoraImage } from '@/config/images';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
@@ -163,28 +163,29 @@ function SectionHeading({ eyebrow, title, copy, dark = false }: { eyebrow: strin
   );
 }
 
-function AbstractHeroVisual() {
+function HumanHeroVisual() {
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[560px] float-mark" aria-label="Abstract Nexora technology system visual" role="img">
-      <div className="absolute inset-[9%] border border-slate-700/70 bg-slate-950/30" />
-      <div className="absolute inset-[16%] border border-cyan-300/15" />
-      <div className="absolute inset-[25%] rounded-full border border-blue-400/25" />
-      <div className="absolute inset-[34%] rounded-full border border-cyan-300/25" />
-      <div className="absolute left-1/2 top-1/2 h-[46%] w-[46%] -translate-x-1/2 -translate-y-1/2">
-        <svg viewBox="0 0 160 160" className="h-full w-full" aria-hidden="true">
-          <defs><linearGradient id="hero-n" x1="22" y1="140" x2="138" y2="18"><stop offset="0" stopColor="#155EEF" /><stop offset="1" stopColor="#22D3EE" /></linearGradient></defs>
-          <path d="M35 128V32l90 96V32" fill="none" stroke="url(#hero-n)" strokeWidth="14" strokeLinecap="square" />
-          <path d="M35 32l90 96" stroke="rgba(255,255,255,.2)" strokeWidth="2" />
-        </svg>
+    <div className="relative mx-auto aspect-square w-full max-w-[560px] float-mark" aria-label={images.hero.business.alt} role="img">
+      <div className="absolute inset-[7%] border border-slate-700/70 bg-slate-950/30 p-3">
+        <div className="image-wash relative h-full overflow-hidden border border-cyan-300/20">
+          <LocalImage
+            src={images.hero.business.src}
+            alt={images.hero.business.alt}
+            containerClassName="h-full w-full"
+            className="object-center"
+            loading="eager"
+            fetchPriority="high"
+            sizes="(min-width: 1024px) 45vw, 90vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1020]/70 via-transparent to-cyan-300/10" />
+          <div className="absolute left-4 top-4 flex items-center gap-2 font-mono-ui text-[9px] text-cyan-100/80"><span className="h-1.5 w-1.5 bg-cyan-300" />PEOPLE / 01</div>
+          <div className="absolute bottom-4 left-4 font-mono-ui text-[9px] uppercase tracking-[.16em] text-white/70">Business in motion</div>
+        </div>
       </div>
-      <div className="absolute left-[10%] top-[17%] flex items-center gap-2 font-mono-ui text-[9px] text-cyan-200/70"><span className="h-1.5 w-1.5 bg-cyan-300" />SYSTEMS / 01</div>
-      <div className="absolute bottom-[16%] right-[7%] max-w-44 border border-slate-700/70 bg-[#0B1020]/85 p-3 backdrop-blur-sm">
-        <div className="mb-3 flex items-center justify-between font-mono-ui text-[9px] text-slate-500"><span>ORBITAL VIEW</span><span className="text-cyan-300">LIVE</span></div>
-        <div className="flex items-end gap-1.5"><span className="h-3 w-1 bg-blue-500" /><span className="h-6 w-1 bg-blue-500" /><span className="h-4 w-1 bg-cyan-300" /><span className="h-9 w-1 bg-cyan-300" /><span className="h-7 w-1 bg-blue-500" /><span className="h-11 w-1 bg-slate-500" /></div>
+      <div className="absolute bottom-[9%] right-[2%] border border-slate-700/70 bg-[#0B1020]/90 p-3 backdrop-blur-sm">
+        <div className="mb-3 flex items-center justify-between gap-8 font-mono-ui text-[9px] text-slate-500"><span>NEXORA / FOCUS</span><span className="text-cyan-300">01</span></div>
+        <div className="flex items-center gap-2 text-[10px] text-slate-300"><Mark light /><span>Human-led systems</span></div>
       </div>
-      <div className="absolute left-[22%] top-1/2 h-px w-[56%] bg-cyan-300/20" />
-      <div className="absolute left-1/2 top-[22%] h-[56%] w-px bg-cyan-300/20" />
-      <div className="absolute left-[49%] top-[49%] h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_0_5px_rgba(34,211,238,.13)]" />
     </div>
   );
 }
@@ -233,7 +234,7 @@ function Hero() {
             <span className="font-mono-ui text-cyan-300">NXR / 2026</span><span className="h-px w-10 bg-slate-700" /><span>Strategy · Design · Technology</span>
           </div>
         </div>
-        <AbstractHeroVisual />
+        <HumanHeroVisual />
       </div>
       <a href="#services" className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 items-center gap-3 font-mono-ui text-[10px] tracking-[.18em] text-slate-500 transition-colors hover:text-cyan-300 md:flex" data-testid="link-scroll-services">SCROLL TO EXPLORE <ChevronDown size={14} /></a>
     </section>
@@ -273,9 +274,17 @@ function Services() {
               </button>
               {isActive && (
                 <div className="grid gap-6 pb-8 pl-[52px] sm:grid-cols-[.7fr_1.3fr] sm:pl-[80px]">
-                  <p className="max-w-xs text-sm leading-6 text-slate-400">{service.description}</p>
-                  <div className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
-                    {service.items.map((item) => <a href="#consultation" key={item} className="group/item flex items-center gap-2 text-[13px] text-slate-300 hover:text-cyan-300" data-testid={`link-service-${item.toLowerCase().replaceAll(' ', '-')}`}><span className="h-1 w-1 bg-blue-500 transition-transform group-hover/item:scale-150" />{item}</a>)}
+                  {service.images[0] && (
+                    <div className="image-wash relative aspect-[16/10] overflow-hidden border border-slate-700/70">
+                      <LocalImage src={service.images[0].src} alt={service.images[0].alt} containerClassName="h-full w-full" sizes="(min-width: 640px) 32vw, 80vw" />
+                      <span className="absolute bottom-3 left-3 font-mono-ui text-[9px] uppercase tracking-[.16em] text-white/75">People + technology</span>
+                    </div>
+                  )}
+                  <div>
+                    <p className="max-w-xs text-sm leading-6 text-slate-400">{service.description}</p>
+                    <div className="mt-5 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
+                      {service.items.map((item) => <a href="#consultation" key={item} className="group/item flex items-center gap-2 text-[13px] text-slate-300 hover:text-cyan-300" data-testid={`link-service-${item.toLowerCase().replaceAll(' ', '-')}`}><span className="h-1 w-1 bg-blue-500 transition-transform group-hover/item:scale-150" />{item}</a>)}
+                    </div>
                   </div>
                 </div>
               )}
@@ -292,7 +301,13 @@ function Solutions() {
     <section id="solutions" className="section-anchor border-y border-slate-800/60 bg-[#0d1428]">
       <div className="mx-auto max-w-[1240px] px-5 py-24 sm:px-8 lg:px-10 lg:py-32">
         <div className="grid gap-14 lg:grid-cols-[.75fr_1.25fr]">
-          <div><SectionHeading eyebrow="Business-first technology" title="Start with the friction. End with momentum." copy="Good technology feels obvious in hindsight. We map what is slowing your business down and create a solution people can actually use." /></div>
+          <div>
+            <SectionHeading eyebrow="Business-first technology" title="Start with the friction. End with momentum." copy="Good technology feels obvious in hindsight. We map what is slowing your business down and create a solution people can actually use." />
+            <div className="image-wash relative mt-8 aspect-[4/3] overflow-hidden border border-slate-700/70">
+              <LocalImage src={images.solutions.businessGrowth.src} alt={images.solutions.businessGrowth.alt} containerClassName="h-full w-full" sizes="(min-width: 1024px) 30vw, 90vw" />
+              <span className="absolute bottom-4 left-4 font-mono-ui text-[9px] uppercase tracking-[.16em] text-white/80">Growth starts with understanding</span>
+            </div>
+          </div>
           <div className="border-t border-slate-700/70">
             {solutions.map((solution, index) => {
               const Icon = solution.icon;
@@ -329,14 +344,13 @@ function Process() {
   );
 }
 
-function PortfolioVisual({ color }: { color: string }) {
+function PortfolioVisual({ color, image }: { color: string; image: NexoraImage }) {
   return (
-    <div className={`relative h-56 overflow-hidden border-b border-slate-700/80 ${color === 'cyan' ? 'bg-[#0b2835]' : color === 'violet' ? 'bg-[#18203c]' : 'bg-[#102456]'}`}>
-      <div className="absolute inset-5 border border-white/10 bg-[#0B1020]/45 p-4">
-        <div className="flex items-center justify-between border-b border-white/10 pb-3"><span className="font-mono-ui text-[8px] text-slate-400">NEXORA / CONCEPT</span><span className="h-1.5 w-1.5 bg-cyan-300" /></div>
-        <div className="mt-5 grid grid-cols-[.8fr_1.2fr] gap-3"><div><div className="h-2 w-16 bg-white/20" /><div className="mt-3 h-1.5 w-24 bg-white/10" /><div className="mt-1.5 h-1.5 w-20 bg-white/10" /></div><div className="grid grid-cols-3 items-end gap-2">{[30, 50, 40, 68, 54, 76].map((height, index) => <span key={index} className={`h-${height} min-h-[24px] ${index % 2 ? 'bg-cyan-300/70' : 'bg-blue-500/60'}`} style={{ height: `${height}%` }} />)}</div></div>
+    <div className={`image-wash relative h-56 overflow-hidden border-b border-slate-700/80 ${color === 'cyan' ? 'bg-[#0b2835]' : color === 'violet' ? 'bg-[#18203c]' : 'bg-[#102456]'}`}>
+      <LocalImage src={image.src} alt={image.alt} containerClassName="h-full w-full" sizes="(min-width: 1024px) 30vw, 90vw" />
+      <div className="absolute inset-5 border border-white/20 bg-[#0B1020]/25 p-4">
+        <div className="flex items-center justify-between border-b border-white/15 pb-3"><span className="font-mono-ui text-[8px] text-white/75">NEXORA / CONCEPT</span><span className="h-1.5 w-1.5 bg-cyan-300" /></div>
       </div>
-      <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full border border-white/10" />
     </div>
   );
 }
@@ -348,7 +362,7 @@ function Portfolio() {
         <div className="flex flex-col justify-between gap-7 md:flex-row md:items-end"><SectionHeading eyebrow="Selected direction" title="A glimpse of what we could build together." copy="These are concept projects: visual studies of how thoughtful systems can make a business clearer, faster, and easier to engage with. Real client work will be added here as it launches." /><span className="font-mono-ui text-[10px] text-slate-500">ARCHIVE / OPEN FOR NEW WORK</span></div>
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
           {projects.map((project, index) => <article key={project.title} className="group border border-slate-700/70 bg-[#0B1020] transition-transform duration-300 hover:-translate-y-1" data-testid={`card-project-${index + 1}`}>
-            <PortfolioVisual color={project.color} />
+             <PortfolioVisual color={project.color} image={project.image} />
             <div className="p-6"><div className="flex items-center justify-between gap-3"><span className="text-[10px] font-semibold uppercase tracking-[.14em] text-cyan-300">{project.type}</span><span className="font-mono-ui text-[10px] text-slate-600">0{index + 1}</span></div><p className="mt-4 text-[11px] uppercase tracking-[.12em] text-slate-500">{project.category}</p><h3 className="mt-2 font-display text-xl tracking-[-.04em] text-white">{project.title}</h3><p className="mt-3 text-sm leading-6 text-slate-400">{project.description}</p><div className="mt-5 flex flex-wrap gap-2">{project.tech.map((tech) => <span key={tech} className="border border-slate-700 px-2 py-1 font-mono-ui text-[9px] text-slate-500">{tech}</span>)}</div><a href="#consultation" className="mt-6 inline-flex items-center gap-2 text-xs font-semibold text-slate-200 transition-colors hover:text-cyan-300" data-testid={`link-view-project-${index + 1}`}>Discuss a similar direction <MoveUpRight size={14} /></a></div>
           </article>)}
         </div>
@@ -361,7 +375,13 @@ function About() {
   return (
     <section id="about" className="section-anchor mx-auto max-w-[1240px] px-5 py-24 sm:px-8 lg:px-10 lg:py-32">
       <div className="grid items-start gap-14 lg:grid-cols-[1fr_1fr] lg:gap-24">
-        <SectionHeading eyebrow="About Nexora" title="Technology should solve problems, not create them." />
+        <div>
+          <SectionHeading eyebrow="About Nexora" title="Technology should solve problems, not create them." />
+          <div className="image-wash relative mt-8 aspect-[4/3] overflow-hidden border border-slate-700/70">
+            <LocalImage src={images.about.collaboration.src} alt={images.about.collaboration.alt} containerClassName="h-full w-full" sizes="(min-width: 1024px) 38vw, 90vw" />
+            <span className="absolute bottom-4 left-4 font-mono-ui text-[9px] uppercase tracking-[.16em] text-white/80">Strategy is a team sport</span>
+          </div>
+        </div>
         <div>
           <p className="text-lg leading-8 text-slate-200">Nexora combines strategy, design, development, automation, and technology to help businesses create practical digital solutions.</p>
           <p className="mt-6 text-sm leading-7 text-slate-400">We are building a technology consultancy for serious business owners, entrepreneurs, professionals, and organizations who need more than a surface-level digital presence. The work starts with understanding what matters, then choosing the simplest powerful way forward.</p>

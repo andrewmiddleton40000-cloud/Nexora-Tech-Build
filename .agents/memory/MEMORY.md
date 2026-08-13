@@ -1,0 +1,1 @@
+- [Vite artifact builds](vite-artifact-build.md) — standalone Vite builds need the same PORT and BASE_PATH values supplied by managed workflows.
