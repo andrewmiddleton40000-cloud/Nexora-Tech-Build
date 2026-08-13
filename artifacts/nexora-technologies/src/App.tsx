@@ -1,6 +1,8 @@
 import { type FormEvent, type ReactNode, useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
+import { LocalImage } from '@/components/local-image';
+import { images } from '@/config/images';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
@@ -54,6 +56,7 @@ const serviceGroups = [
     description: 'Digital touchpoints that make your value clear and your business easier to choose.',
     icon: Globe2,
     items: ['Business Websites', 'Corporate Websites', 'E-commerce Platforms', 'Landing Pages', 'Web Applications', 'Customer Portals'],
+    images: [images.services.webDevelopment, images.services.ecommerce],
   },
   {
     title: 'Mobile solutions',
@@ -61,6 +64,7 @@ const serviceGroups = [
     description: 'Useful, focused mobile experiences for your customers and your internal teams.',
     icon: MonitorSmartphone,
     items: ['Mobile Applications', 'Customer Apps', 'Business Apps', 'Booking Applications'],
+    images: [images.services.mobileApp],
   },
   {
     title: 'Business technology',
@@ -68,6 +72,7 @@ const serviceGroups = [
     description: 'Connected systems that bring the important parts of your operation into view.',
     icon: Network,
     items: ['Business Management Systems', 'Booking Systems', 'Customer Dashboards', 'Admin Dashboards', 'CRM Solutions', 'Payment Integrations', 'Custom Business Platforms'],
+    images: [images.services.businessSystems],
   },
   {
     title: 'AI & automation',
@@ -75,6 +80,7 @@ const serviceGroups = [
     description: 'Practical intelligence and automation for work that should not stay repetitive.',
     icon: Bot,
     items: ['AI Chatbots', 'AI Assistants', 'Business Automation', 'AI-powered Applications', 'Workflow Automation'],
+    images: [images.services.aiAutomation],
   },
   {
     title: 'Digital infrastructure',
@@ -82,6 +88,7 @@ const serviceGroups = [
     description: 'The quiet, essential layer that keeps your digital presence dependable.',
     icon: ShieldCheck,
     items: ['Domain Setup', 'Hosting', 'Business Email', 'Website Maintenance', 'Analytics', 'SEO Infrastructure', 'Technical Support'],
+    images: [],
   },
 ];
 
@@ -102,9 +109,9 @@ const processSteps = [
 ];
 
 const projects = [
-  { type: 'Concept Project', category: 'Business platform', title: 'Northstar Operations', description: 'A composed command centre concept for teams managing customers, work, and decisions in one place.', tech: ['React', 'Data systems'], color: 'blue' },
-  { type: 'Concept Project', category: 'Digital commerce', title: 'Arc Supply Co.', description: 'A considered commerce experience showing how product discovery and operational clarity can share one system.', tech: ['E-commerce', 'Payments'], color: 'cyan' },
-  { type: 'Concept Project', category: 'AI & automation', title: 'Signal Desk', description: 'A practical AI workspace concept for turning incoming requests into clear next actions.', tech: ['AI workflows', 'Integrations'], color: 'violet' },
+  { type: 'Concept Project', projectType: 'Business platform', category: 'Business platform', title: 'Northstar Operations', description: 'A composed command centre concept for teams managing customers, work, and decisions in one place.', tech: ['React', 'Data systems'], color: 'blue', image: images.services.businessSystems },
+  { type: 'Concept Project', projectType: 'Digital commerce', category: 'Digital commerce', title: 'Arc Supply Co.', description: 'A considered commerce experience showing how product discovery and operational clarity can share one system.', tech: ['E-commerce', 'Payments'], color: 'cyan', image: images.services.ecommerce },
+  { type: 'Concept Project', projectType: 'AI & automation', category: 'AI & automation', title: 'Signal Desk', description: 'A practical AI workspace concept for turning incoming requests into clear next actions.', tech: ['AI workflows', 'Integrations'], color: 'violet', image: images.solutions.automation },
 ];
 
 function Mark({ light = false }: { light?: boolean }) {

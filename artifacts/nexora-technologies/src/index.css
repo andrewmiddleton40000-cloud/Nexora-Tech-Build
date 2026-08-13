@@ -136,6 +136,20 @@
 }
 
 .site-shell { overflow: clip; }
+.image-fallback {
+  background:
+    linear-gradient(135deg, rgba(21,94,239,.2), transparent 46%),
+    linear-gradient(315deg, rgba(34,211,238,.1), transparent 50%),
+    #101a35;
+}
+.editorial-image { filter: saturate(.9) contrast(1.02); }
+.image-wash::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(11,16,32,.04), rgba(11,16,32,.54));
+}
 .grid-lines {
   background-image: linear-gradient(rgba(148,163,184,.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(148,163,184,.07) 1px, transparent 1px);
