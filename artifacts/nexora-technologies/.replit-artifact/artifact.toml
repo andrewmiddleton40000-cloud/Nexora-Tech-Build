@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Nexora Technologies"
+description = "A premium responsive corporate website for Nexora Technologies, a digital technology consultancy helping businesses turn ideas and challenges into modern websites, applications, business systems, AI solutions, and automation."
+version = "1.0.0"
+id = "artifacts/nexora-technologies"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19704
+
+[services.development]
+run = "pnpm --filter @workspace/nexora-technologies run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/nexora-technologies", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/nexora-technologies/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19704"
+BASE_PATH = "/"

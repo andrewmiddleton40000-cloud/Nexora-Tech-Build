@@ -1,0 +1,671 @@
+# NEXORA TECHNOLOGIES — WEBSITE BUILD PROMPT
+
+Build a premium, modern, production-ready corporate website for a technology company called **Nexora Technologies**.
+
+## BRAND
+
+**Company:** Nexora Technologies
+
+**Tagline:**
+Digital Solutions. Built for Growth.
+
+**Positioning:**
+Nexora Technologies is a digital technology consultancy that helps businesses, entrepreneurs, professionals, and organizations transform ideas into modern digital solutions.
+
+Nexora provides technology solutions including websites, web applications, mobile applications, e-commerce platforms, business systems, AI solutions, automation, integrations, hosting, and ongoing technical support.
+
+The brand must feel like a **premium technology consultancy**, NOT a cheap freelance web-design company.
+
+---
+
+# VISUAL IDENTITY
+
+Use the following brand direction consistently.
+
+### Primary colors
+
+* Midnight Navy: #0B1020
+* Electric Blue: #155EEF
+* Cyan: #22D3EE
+* Slate Gray: #94A3B8
+* White: #FFFFFF
+
+### Typography
+
+Use:
+
+* Sora for headings and major branding
+* Inter for body text, UI elements, forms, and supporting content
+
+If those fonts cannot be loaded directly, use close modern geometric sans-serif alternatives.
+
+### Logo
+
+Use the Nexora N monogram as the primary brand symbol.
+
+The logo is a modern geometric/ribbon-style "N" using blue-to-cyan technology colors.
+
+The website should support:
+
+1. Full Nexora Technologies logo
+2. Icon-only N logo
+3. Light-background version
+4. Dark-background version
+
+Do not create a generic technology logo. The existing Nexora N monogram should be treated as the official brand mark.
+
+If a logo asset is supplied later, make it easy to replace the temporary logo with the supplied asset without restructuring the website.
+
+---
+
+# DESIGN DIRECTION
+
+Create a high-end, minimalist technology aesthetic.
+
+Think:
+
+* premium technology consultancy
+* modern SaaS company
+* sophisticated corporate website
+* dark navy backgrounds
+* controlled blue/cyan accents
+* subtle gradients
+* clean typography
+* generous whitespace
+* sophisticated cards
+* subtle animations
+* professional layouts
+
+Avoid:
+
+* cheesy stock imagery
+* excessive neon effects
+* excessive glowing elements
+* cartoon graphics
+* generic IT company designs
+* excessive rounded cards
+* clutter
+* cheap-looking gradients
+* excessive animations
+
+The site should look credible enough for a business owner considering a major technology project.
+
+---
+
+# WEBSITE STRUCTURE
+
+Build the following pages:
+
+## 1. HOME
+
+Hero section:
+
+Headline:
+
+**Digital Solutions. Built for Growth.**
+
+Supporting copy:
+
+**We turn ideas, business challenges, and opportunities into powerful digital solutions that help businesses operate smarter, connect better, and grow faster.**
+
+Primary CTA:
+
+**Book a Consultation**
+
+Secondary CTA:
+
+**Explore Our Services**
+
+Hero visual should use the Nexora N symbol or an abstract premium technology visual.
+
+Do NOT use a generic laptop stock image.
+
+---
+
+## 2. SERVICES
+
+Create a dedicated services page.
+
+Organize services into clear categories.
+
+### Web Solutions
+
+* Business Websites
+* Corporate Websites
+* E-commerce Platforms
+* Landing Pages
+* Web Applications
+* Customer Portals
+
+### Mobile Solutions
+
+* Mobile Applications
+* Customer Apps
+* Business Apps
+* Booking Applications
+
+### Business Technology
+
+* Business Management Systems
+* Booking Systems
+* Customer Dashboards
+* Admin Dashboards
+* CRM Solutions
+* Payment Integrations
+* Custom Business Platforms
+
+### AI & Automation
+
+* AI Chatbots
+* AI Assistants
+* Business Automation
+* AI-powered Applications
+* Workflow Automation
+
+### Digital Infrastructure
+
+* Domain Setup
+* Hosting
+* Business Email
+* Website Maintenance
+* Analytics
+* SEO Infrastructure
+* Technical Support
+
+Each service should have:
+
+* icon
+* title
+* short description
+* "Learn More" interaction
+
+---
+
+# 3. ABOUT NEXORA
+
+Create a premium About page.
+
+Headline:
+
+**Technology should solve problems, not create them.**
+
+Explain that Nexora combines strategy, design, development, automation, and technology to help businesses create practical digital solutions.
+
+Do NOT invent fake statistics, fake clients, fake awards, fake employees, fake testimonials, or fake case studies.
+
+The company is new, so maintain credibility through strong positioning rather than fabricated achievements.
+
+---
+
+# 4. OUR PROCESS
+
+Create a visual 5-step process:
+
+### 01 — Discover
+
+We understand your business, objectives, audience, and challenges.
+
+### 02 — Strategize
+
+We define the right technology and digital approach for your needs.
+
+### 03 — Design
+
+We create the user experience, interface, and solution architecture.
+
+### 04 — Build
+
+We develop, integrate, test, and refine the solution.
+
+### 05 — Launch & Grow
+
+We launch the solution and provide ongoing support, optimization, and improvements.
+
+Make this section visually impressive.
+
+---
+
+# 5. SOLUTIONS
+
+Create a page explaining that Nexora does not simply sell websites or apps.
+
+We solve business problems.
+
+Create example solution categories:
+
+### Need more customers?
+
+Websites + SEO + conversion-focused landing pages.
+
+### Need to sell online?
+
+E-commerce + payment integration + customer management.
+
+### Need to automate repetitive work?
+
+AI + automation + integrations.
+
+### Need customers to book appointments?
+
+Booking system + payments + notifications.
+
+### Need a custom business platform?
+
+Web application + dashboard + database + integrations.
+
+This page should communicate the consultancy approach.
+
+---
+
+# 6. PORTFOLIO
+
+Create a portfolio/case-study section.
+
+Since Nexora is launching, DO NOT invent completed client projects.
+
+Instead, create a section that can later contain:
+
+* Featured Projects
+* Concept Projects
+* Client Case Studies
+
+For now, use tasteful placeholders labeled clearly as:
+
+**Concept Project**
+
+Do not make placeholders look like real clients.
+
+Structure each project card with:
+
+* project image
+* category
+* project title
+* short description
+* technologies
+* View Project button
+
+Make it extremely easy to add real projects later.
+
+---
+
+# 7. CONSULTATION PAGE
+
+This is one of the most important pages.
+
+Headline:
+
+**Let's Build Something That Moves Your Business Forward.**
+
+Supporting text:
+
+**Tell us what you're trying to achieve and we'll help you determine the right digital solution.**
+
+Create a professional consultation form.
+
+Fields:
+
+* Full Name
+* Business/Organization
+* Email
+* WhatsApp/Phone
+* What do you need?
+* Tell us about your project
+* Current website, if any
+* Preferred timeline
+* Budget range
+* How did you hear about Nexora?
+
+Service selection:
+
+* Website
+* Web Application
+* Mobile Application
+* E-commerce
+* Business System
+* AI Solution
+* Automation
+* Other
+
+Add a prominent:
+
+**Request a Consultation**
+
+button.
+
+The form must be structured so it can later be connected to:
+
+* email
+* WhatsApp
+* CRM
+* Google Sheets
+* database
+* backend API
+
+Do not hard-code a fake submission system.
+
+---
+
+# 8. CONTACT
+
+Create a professional contact page.
+
+Include:
+
+**Nexora Technologies**
+
+Digital Solutions. Built for Growth.
+
+Provide placeholders for:
+
+* WhatsApp
+* Phone
+* Email
+* Instagram
+* LinkedIn
+
+Do not invent contact information.
+
+Use clearly marked configuration variables/placeholders so the real information can be added later.
+
+---
+
+# NAVIGATION
+
+Desktop navigation:
+
+NEXORA logo
+
+Home
+Services
+Solutions
+Process
+Portfolio
+About
+Contact
+
+Primary navigation CTA:
+
+**Book a Consultation**
+
+Mobile navigation should use a clean responsive menu.
+
+---
+
+# FOOTER
+
+Footer should contain:
+
+Nexora Technologies logo
+
+Digital Solutions. Built for Growth.
+
+Short company description.
+
+Navigation links.
+
+Services links.
+
+Contact links.
+
+Social media placeholders.
+
+Copyright:
+
+© 2026 Nexora Technologies. All rights reserved.
+
+Do not invent legal registration numbers or addresses.
+
+---
+
+# IMPORTANT UX REQUIREMENTS
+
+The website must be:
+
+* fully responsive
+* mobile-first
+* fast-loading
+* accessible
+* SEO-friendly
+* semantic HTML
+* keyboard accessible
+* optimized for desktop, tablet, and mobile
+
+Pay particular attention to mobile because many initial Nexora prospects will arrive through WhatsApp.
+
+---
+
+# ANIMATIONS
+
+Use subtle professional animations:
+
+* fade-up on section entrance
+* gentle hover effects
+* subtle button transitions
+* smooth navigation
+* subtle logo movement where appropriate
+* elegant card interactions
+
+Animations must never interfere with usability or page speed.
+
+Respect prefers-reduced-motion.
+
+Do NOT make the website look like a gaming website.
+
+---
+
+# TECHNICAL ARCHITECTURE
+
+Use a modern maintainable stack.
+
+Preferred:
+
+* React
+* TypeScript
+* Tailwind CSS
+* reusable components
+* clean component architecture
+
+Use the stack that is most stable and appropriate within the Replit environment if the preferred stack is unavailable.
+
+Organize the code into reusable components.
+
+Suggested structure:
+
+components/
+pages/
+sections/
+assets/
+lib/
+data/
+styles/
+
+Create reusable components for:
+
+* Navbar
+* Footer
+* Hero
+* ServiceCard
+* CTASection
+* ProjectCard
+* ProcessStep
+* ConsultationForm
+* Button
+* SectionHeading
+
+---
+
+# CONTENT MANAGEMENT
+
+Do not scatter service information throughout the code.
+
+Create structured data/configuration where practical so services and portfolio projects can be added or edited easily.
+
+For example:
+
+services data
+projects data
+navigation data
+contact configuration
+
+This will make future updates much easier.
+
+---
+
+# SEO
+
+Implement:
+
+* proper title tags
+* meta descriptions
+* Open Graph metadata
+* semantic headings
+* descriptive alt text
+* favicon
+* sitemap-ready structure
+* robots.txt
+* clean URLs
+
+Suggested homepage title:
+
+**Nexora Technologies | Digital Solutions. Built for Growth.**
+
+Suggested description:
+
+**Nexora Technologies builds modern websites, applications, business systems, AI solutions, and digital platforms designed to help businesses grow.**
+
+---
+
+# PERFORMANCE
+
+Optimize for:
+
+* fast initial load
+* compressed images
+* lazy loading
+* minimal unnecessary dependencies
+* responsive images
+* efficient animations
+
+Avoid unnecessary libraries.
+
+---
+
+# SECURITY
+
+For forms and future backend functionality:
+
+* validate all user input
+* sanitize submitted data
+* do not expose API keys
+* use environment variables for secrets
+* never place private credentials in frontend code
+
+---
+
+# FUTURE-READY FEATURES
+
+Architect the site so the following can be added later without rebuilding everything:
+
+### Client Portal
+
+Clients will eventually be able to:
+
+* view projects
+* see project status
+* communicate with Nexora
+* view invoices
+* download documents
+* submit support requests
+
+### Lead Management
+
+Eventually connect consultation submissions to a CRM or internal dashboard.
+
+### Payments
+
+Eventually support online deposits and project payments.
+
+### AI
+
+Eventually integrate Nexora AI services and AI-powered customer support.
+
+### Blog
+
+Create a structure that can later support:
+
+* Technology
+* AI
+* Business
+* Digital transformation
+* Entrepreneurship
+
+---
+
+# IMPORTANT BUSINESS POSITIONING
+
+Do NOT position Nexora as:
+
+"cheap website designers."
+
+Do NOT use phrases like:
+
+"Affordable websites starting from ₦XX,XXX."
+
+Do NOT use fake urgency.
+
+Do NOT use fake testimonials.
+
+Do NOT create fake client logos.
+
+Do NOT claim years of experience that have not been provided.
+
+The website must communicate:
+
+**Professional. Strategic. Premium. Reliable. Technology-focused.**
+
+Nexora should feel like a company a serious business owner could trust with a significant digital project.
+
+---
+
+# FINAL CALL TO ACTION
+
+Throughout the site, the primary conversion action should be:
+
+**BOOK A CONSULTATION**
+
+Secondary action:
+
+**TELL US ABOUT YOUR PROJECT**
+
+The visitor should always understand what to do next.
+
+---
+
+# BEFORE YOU FINISH
+
+First build the complete frontend experience.
+
+Then test:
+
+1. Desktop
+2. Tablet
+3. Mobile
+4. Navigation
+5. All buttons
+6. Consultation form
+7. Responsive layouts
+8. Accessibility
+9. SEO metadata
+10. Performance
+
+Remove all broken links.
+
+Make sure there are no placeholder lorem ipsum texts.
+
+Use realistic professional Nexora copy throughout.
+
+Where real business information is required but has not yet been provided, use clearly labeled configuration placeholders rather than invented information.
+
+The final result should feel like a **premium technology consultancy launching in 2026**, not a generic template.
+
+Build the foundation cleanly because additional Nexora business features will be added later.
