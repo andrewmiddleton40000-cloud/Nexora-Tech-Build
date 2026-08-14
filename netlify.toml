@@ -1,0 +1,11 @@
+[build]
+  command = "PORT=19704 BASE_PATH=/ pnpm --filter @workspace/nexora-technologies run build"
+  publish = "artifacts/nexora-technologies/dist/public"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
