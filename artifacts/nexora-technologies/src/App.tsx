@@ -30,11 +30,12 @@ import {
   Zap,
 } from 'lucide-react';
 import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const queryClient = new QueryClient();
 
 const CONTACT_CONFIG = {
-  whatsapp: '[WhatsApp number to be configured]',
+  whatsappLink: 'https://wa.me/message/F7XU57XFQ4TTC1',
   phone: '[Phone number to be configured]',
   email: '[Email address to be configured]',
   instagram: '[Instagram handle to be configured]',
@@ -441,12 +442,12 @@ function Consultation() {
 }
 
 function Contact() {
-  const contactRows = [['WhatsApp', CONTACT_CONFIG.whatsapp], ['Phone', CONTACT_CONFIG.phone], ['Email', CONTACT_CONFIG.email], ['Instagram', CONTACT_CONFIG.instagram], ['LinkedIn', CONTACT_CONFIG.linkedin]];
+  const contactRows: [string, string, string?][] = [['WhatsApp', 'Chat with us on WhatsApp', CONTACT_CONFIG.whatsappLink], ['Phone', CONTACT_CONFIG.phone], ['Email', CONTACT_CONFIG.email], ['Instagram', CONTACT_CONFIG.instagram], ['LinkedIn', CONTACT_CONFIG.linkedin]];
   return (
     <section id="contact" className="section-anchor mx-auto max-w-[1240px] px-5 py-24 sm:px-8 lg:px-10 lg:py-32">
       <div className="grid gap-14 lg:grid-cols-[.8fr_1.2fr]">
         <div><p className="eyebrow">Contact</p><h2 className="mt-4 font-display text-4xl font-semibold tracking-[-.06em] text-white sm:text-5xl">Have a meaningful problem to solve?</h2><p className="mt-6 max-w-md text-sm leading-7 text-slate-400">Start with a conversation. We will help you make sense of the opportunity, the right technology, and a sensible next move.</p><ButtonLink href="#consultation" testId="link-contact-consultation">Tell Us About Your Project</ButtonLink></div>
-        <div className="border-t border-slate-700/70">{contactRows.map(([label, value]) => <div key={label} className="grid gap-2 border-b border-slate-700/70 py-5 sm:grid-cols-[.35fr_1fr]"><span className="font-mono-ui text-[10px] uppercase tracking-[.14em] text-cyan-300">{label}</span><span className="text-sm text-slate-300" data-testid={`text-contact-${label.toLowerCase()}`}>{value}</span></div>)}</div>
+        <div className="border-t border-slate-700/70">{contactRows.map(([label, value, link]) => <div key={label} className="grid gap-2 border-b border-slate-700/70 py-5 sm:grid-cols-[.35fr_1fr]"><span className="font-mono-ui text-[10px] uppercase tracking-[.14em] text-cyan-300">{label}</span>{link ? <a href={link} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-300 hover:text-cyan-300" data-testid={`text-contact-${label.toLowerCase()}`}>{value}</a> : <span className="text-sm text-slate-300" data-testid={`text-contact-${label.toLowerCase()}`}>{value}</span>}</div>)}</div>
       </div>
     </section>
   );
@@ -464,6 +465,22 @@ function Footer() {
         <div className="mt-14 flex flex-col justify-between gap-3 border-t border-slate-800/70 pt-6 text-[11px] text-slate-600 sm:flex-row"><span>© 2026 Nexora Technologies. All rights reserved.</span><span>Contact configuration pending · Built for the next brief.</span></div>
       </div>
     </footer>
+  );
+}
+
+function WhatsAppButton() {
+  return (
+    <a
+      href={CONTACT_CONFIG.whatsappLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with Nexora Technologies on WhatsApp"
+      className="group fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(0,0,0,.35)] transition-transform duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1020]"
+      data-testid="link-whatsapp-float"
+    >
+      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#25D366] opacity-40 group-hover:opacity-0" />
+      <FaWhatsapp size={27} className="relative" />
+    </a>
   );
 }
 
@@ -506,6 +523,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}><Router /></WouterRouter>
+        <WhatsAppButton />
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
